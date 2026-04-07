@@ -13,9 +13,7 @@
             background-color: #fff;
         }
         
-        /* --- Phần Banner --- */
         .banner-section {
-            /* Đường dẫn đã được sửa để trỏ vào storage/images/banner.jpg */
             background-image: url('{{ asset("storage/images/banner.jpg") }}'); 
             background-size: cover;
             background-position: center;
