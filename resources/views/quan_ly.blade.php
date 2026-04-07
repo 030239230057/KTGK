@@ -53,7 +53,7 @@
             height: auto;
         }
         
-        
+        table {
             font-size: 0.9rem;
         }
     </style>
@@ -90,8 +90,12 @@
 
                 <h3 class="text-center mb-4">DANH SÁCH PHIM</h3>
                 
-                <div class="mb-3">
-                    <button class="btn btn-success btn-sm">Thêm</button>
+                <div class="mb-3 d-flex justify-content-between align-items-center">
+                    <button class="btn btn-success btn-sm">Thêm phim mới</button>
+                    
+                    <a href="{{ url('/trangchu') }}" class="btn btn-secondary btn-sm">
+                        🏠 Về giao diện Trang chủ
+                    </a>
                 </div>
                 
                 <table id="id-table" class="table table-striped table-bordered" style="width:100%">
@@ -119,7 +123,7 @@
                             <td class="text-center">{{ $phim->vote_average ?? 'N/A' }}</td>
                             
                             <td class="text-center" style="min-width: 120px;">
-                                <a href="{{ url('/chi-tiet/' . $phim->id) }}" class="btn btn-primary btn-sm">Xem</a>
+                                <a href="{{ url('/chitiet/' . $phim->id) }}" class="btn btn-primary btn-sm">Xem</a>
                                 <a href="{{ route('admin.movies.delete', $phim->id) }}" class="btn btn-danger btn-sm btn-delete">Xóa</a>
                             </td>
                         </tr>

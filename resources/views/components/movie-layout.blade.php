@@ -15,7 +15,7 @@
                 max-width:1200px;
                 max-height:200px;
                 height:65vh;
-                background-image: url("{{ asset('storage/image/banner.jpg') }}");
+                background-image: url("{{ asset('storage/images/banner.jpg') }}");
                 background-size:cover;
                 color:white;
                 margin:0 auto;
@@ -31,6 +31,7 @@
     <header style="text-align:center">
         <div class="banner">
             <h2>Welcome.</h2>
+            <h3>Millions of movies, TV shows and people to discover. Explore now.
             <div class="search-input">
                 <form method="post" action="{{ url('/timkiem') }}">
                     @csrf
