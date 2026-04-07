@@ -120,7 +120,7 @@
                             
                             <td class="text-center" style="min-width: 120px;">
                                 <a href="{{ url('/chi-tiet/' . $phim->id) }}" class="btn btn-primary btn-sm">Xem</a>
-                                <a href="{{ route('admin.movies.delete', $phim->id) }}" class="btn btn-danger btn-sm" onclick="return confirm('Bạn có chắc chắn muốn xóa?')">Xóa</a>
+                                <a href="{{ route('admin.movies.delete', $phim->id) }}" class="btn btn-danger btn-sm btn-delete">Xóa</a>
                             </td>
                         </tr>
                         @endforeach
@@ -145,5 +145,28 @@
             });
         });
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+    $(document).ready(function() {
+        $('.btn-delete').on('click', function(e) {
+            e.preventDefault(); 
+            const url = $(this).attr('href'); 
+
+            // Hộp thoại tối giản hết mức
+            Swal.fire({
+                title: 'Bạn có chắc chắn muốn xóa?',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Xóa',
+                cancelButtonText: 'Hủy'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = url; 
+                }
+            });
+        });
+    });
+</script>
 </body>
 </html>
